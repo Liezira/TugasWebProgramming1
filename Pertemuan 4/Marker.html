@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html> 
+<head> 
+  <title>New Document</title> 
+  <meta name="Generator" content="EditPlus"> 
+  <meta name="Author" content=""> 
+  <meta name="Keywords" content=""> 
+  <meta name="Description" content="">
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .marker {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: red;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      pointer-events: none; /* agar tetap bisa klik area <map> */
+    }
+  </style>
+</head> 
+<body> 
+  <p>Klik pada bagian atau area gambar sesuai dengan koordinat map yang telah ditentukan</p>
+
+  <div class="image-container">
+    <img src="./Pict/Gambar1.jpeg" alt="gambarku" usemap="#picturemap">
+
+    <!-- Tonjolan bulat merah -->
+    <div class="marker" style="top: 60px; left: 40px;"></div>  <!-- bagian A -->
+    <div class="marker" style="top: 3px; left: 58px;"></div>   <!-- bagian B -->
+    <div class="marker" style="top: 8px; left: 102px;"></div>  <!-- bagian C -->
+  </div>
+
+  <map name="picturemap"> 
+    <area shape="rect" coords="0,0,82,90" href="a.htm" title="bagianA"> 
+    <area shape="circle" coords="58,3,10" href="b.htm" title="bagianB"> 
+    <area shape="circle" coords="102,8,10" href="c.htm" title="bagianC"> 
+  </map> 
+</body> 
+</html>
