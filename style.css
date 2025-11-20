@@ -1,0 +1,245 @@
+/* Palet Warna Kustom untuk Tema Gelap & Elegan */
+:root {
+    --bg-primary-dark: #212529;
+    --bg-secondary-dark: #2c313a;
+    --text-light: #e0e0e0;
+    --accent-color: #00bcd4;
+    --accent-hover: #00e5ff;
+    --border-dark: #495057;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    padding-top: 65px; 
+    background-color: var(--bg-primary-dark);
+    color: var(--text-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.navbar {
+    background-color: var(--bg-primary-dark) !important;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--accent-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-light) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+.navbar-toggler {
+    border: none !important;
+    padding: 0 !important;
+}
+
+.container-custom {
+    cursor: pointer;
+    display: flex;
+    margin-right: 1rem; 
+}
+
+.container-custom svg {
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container-custom.active svg {
+    transform: rotate(90deg);
+}
+
+.container-custom path {
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke: var(--text-light);
+}
+
+.container-custom.active path {
+    stroke: var(--accent-color);
+}
+
+.container-custom path:nth-child(1) { transform-origin: 36% 40%; }
+.container-custom path:nth-child(2) { stroke-dasharray: 29 299; }
+.container-custom path:nth-child(3) { transform-origin: 35% 63%; }
+.container-custom path:nth-child(4) { stroke-dasharray: 29 299; }
+.container-custom path:nth-child(5) { transform-origin: 61% 52%; }
+.container-custom path:nth-child(6) { transform-origin: 62% 52%; }
+
+.container-custom.active path:nth-child(1) { transform: translateX(9px) translateY(1px) rotate(45deg); }
+.container-custom.active path:nth-child(2) { stroke-dasharray: 225 299; stroke-dashoffset: -72px; }
+.container-custom.active path:nth-child(3) { transform: translateX(9px) translateY(1px) rotate(-45deg); }
+.container-custom.active path:nth-child(4) { stroke-dasharray: 225 299; stroke-dashoffset: -72px; }
+.container-custom.active path:nth-child(5) { transform: translateX(9px) translateY(1px) rotate(-45deg); }
+.container-custom.active path:nth-child(6) { transform: translateX(9px) translateY(1px) rotate(45deg); }
+
+.navbar-toggler-icon {
+    display: none !important;
+}
+
+.scrollspy-example {
+    background-color: var(--bg-primary-dark) !important;
+}
+
+#home, #content, #contact, #gallery {
+    background-color: var(--bg-primary-dark) !important;
+}
+
+#profile, #tugas {
+    background-color: var(--bg-secondary-dark) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-light);
+}
+
+.text-primary { 
+    color: var(--accent-color) !important;
+}
+
+.btn-primary { 
+    background-color: var(--accent-color); 
+    border-color: var(--accent-color); 
+    color: var(--bg-primary-dark);
+    font-weight: 600;
+}
+.btn-primary:hover {
+    background-color: var(--accent-hover); 
+    border-color: var(--accent-hover);
+    color: var(--bg-primary-dark);
+}
+
+.btn-outline-dark {
+    border-color: var(--text-light);
+    color: var(--text-light);
+}
+.btn-outline-dark:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-primary-dark);
+}
+
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid var(--accent-color); 
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+}
+
+.card {
+    background-color: var(--bg-secondary-dark);
+    color: var(--text-light);
+    border: 1px solid var(--border-dark) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: var(--accent-color) !important;
+}
+
+.card-text small.text-muted {
+    color: rgba(224, 224, 224, 0.7) !important;
+}
+
+.badge {
+    color: var(--bg-primary-dark) !important;
+    font-weight: 600;
+}
+.badge.bg-info { background-color: #00ACC1 !important; }
+.badge.bg-warning { background-color: #FFCA28 !important; }
+.badge.bg-primary { background-color: var(--accent-color) !important; }
+.badge.bg-danger { background-color: #E57373 !important; }
+.badge.bg-success { background-color: #66BB6A !important; }
+.badge.bg-dark { background-color: #90A4AE !important; color: var(--bg-primary-dark) !important;}
+.badge.bg-secondary { background-color: #78909C !important; color: var(--bg-primary-dark) !important;}
+
+
+.project-card {
+    overflow: hidden; 
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: contain;
+    background-color: #fff; /* Latar belakang putih untuk gambar */
+    padding: 10px;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); 
+}
+
+footer {
+    background-color: #111317 !important;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-dark);
+}
+
+@media (min-width: 992px) { 
+    .container-custom {
+        display: none !important;
+    }
+    #navbarNav {
+        display: flex !important;
+    }
+}
+@media (max-width: 991.98px) {
+    .container-custom {
+        display: flex !important;
+    }
+    #navbarNav.collapse:not(.show) {
+        display: none;
+    }
+}
+
+
+.form-control.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+    background-color: var(--bg-secondary-dark);
+    color: var(--text-light); 
+}
+
+
+.form-control.is-valid {
+    border-color: #198754 !important;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
+    background-color: var(--bg-secondary-dark);
+    color: var(--text-light);
+}
+
+
+.form-label {
+    color: var(--text-light);
+}
