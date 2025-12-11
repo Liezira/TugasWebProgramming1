@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Convert String to Number</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // String awal
+      var myString = "56.02 degrees centigrade";
+
+      // Deklarasi variabel angka
+      var myInt;
+      var myFloat;
+
+      // Menggunakan parseInt langsung
+      document.write('"' + myString + '" is ' + parseInt(myString) + " as an integer<br>");
+
+      // Simpan hasil parseInt ke variabel
+      myInt = parseInt(myString);
+      document.write('"' + myString + '" when converted to an integer equals ' + myInt + "<br>");
+
+      // Simpan hasil parseFloat ke variabel
+      myFloat = parseFloat(myString);
+      document.write('"' + myString + '" when converted to a floating point number equals ' + myFloat);
+    </script>
+  </body>
+</html>
