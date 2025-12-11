@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Pembuatan Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e608fa;
+    }
+
+    form {
+      background: #fff;
+      width: 450px;
+      margin: 20px auto;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    fieldset {
+      border: 1px solid #dcdde1;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #273c75;
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"], select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      background-color: #40739e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #273c75;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Form Pendaftaran</h1>
+
+  <form>
+    <fieldset>
+      <legend>Data Diri</legend>
+      <label>NIM</label>
+      <input type="text" name="nim" size="11">
+
+      <label>Nama</label>
+      <input type="text" name="nama" size="25">
+
+      <label>Jenis Kelamin</label>
+      <input type="radio" name="jkel" value="Pria"> Pria
+      <input type="radio" name="jkel" value="Wanita"> Wanita
+
+      <label>Agama</label>
+      <select name="agama">
+        <option value="Islam">Islam</option>
+        <option value="Katholik">Katholik</option>
+        <option value="Kristen">Kristen</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Budha">Budha</option>
+      </select>
+
+      <label>Status</label>
+      <input type="radio" name="status" value="Kawin"> Kawin
+      <input type="radio" name="status" value="Belum Kawin"> Belum Kawin
+
+      <label>Jurusan</label>
+      <select name="jurusan">
+        <option value="Teknik Informatika">Teknik Informatika</option>
+        <option value="Manajemen Informatika">Manajemen Informatika</option>
+        <option value="Teknik Komputer">Teknik Komputer</option>
+        <option value="Teknik Industri">Teknik Industri</option>
+      </select>
+
+      <label>Hobi</label>
+      <input type="checkbox" name="hoby" value="Futsal"> Futsal
+      <input type="checkbox" name="hoby" value="Renang"> Renang
+      <input type="checkbox" name="hoby" value="Traveling"> Traveling
+
+      <label>Keterangan</label>
+      <textarea name="ket" rows="3" cols="30"></textarea>
+    </fieldset>
+
+    <div class="button-group">
+      <input type="submit" value="Kirim">
+      <input type="reset" value="Ulang">
+    </div>
+  </form>
+
+</body>
+</html>
