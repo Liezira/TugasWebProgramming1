@@ -2,10 +2,84 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>KALKULATOR | by Ricky</title>
+    <title>KALKULATOR | by Rafi</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
 
-    <!-- CSS eksternal -->
-    <link rel="stylesheet" href="style.css" />
+.window {
+  width: 600px;
+  margin: 40px auto;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title-bar {
+  background-color: #ddd;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 30px 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 60px 10px;
+  font-weight: bold;
+}
+
+.row-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 25px;
+}
+
+input[type="number"] {
+  width: 200px;
+  padding: 5px;
+}
+
+select {
+  padding: 5px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#result {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 24px; /* tempat hasil supaya tidak geser */
+}
+
+.credit {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+    </style>
   </head>
   <body>
     <div class="window">
@@ -13,7 +87,7 @@
       <div class="content">
         <h1>Operasi Aritmatika</h1>
 
-        <div class="labels">
+        <div class="labels">  
           <span>Nilai I</span>
           <span>Nilai II</span>
         </div>
@@ -35,12 +109,59 @@
         <div id="result"></div>
 
         <!-- TULISAN DI BAWAH HASIL -->
-        <p class="credit">Created by Ricky Allende Rabbani, allenderabbani@gmail.com</p>
+        <p class="credit">Created by Rafi Musyaffa Ahmad, ahmadrafimusyaffa@gmail.com</p>
         <!-- ganti nama & email sesuai keinginan -->
       </div>
     </div>
 
-    <!-- JS eksternal -->
-    <script src="script.js"></script>
+    <script>
+      // Tunggu sampai dokumen siap (opsional tapi aman)
+document.addEventListener("DOMContentLoaded", function () {
+  const btnHitung = document.getElementById("btnHitung");
+
+  btnHitung.addEventListener("click", function () {
+    const n1 = parseFloat(document.getElementById("nilai1").value);
+    const n2 = parseFloat(document.getElementById("nilai2").value);
+    const op = document.getElementById("operator").value;
+    const resultDiv = document.getElementById("result");
+
+    if (isNaN(n1) || isNaN(n2)) {
+      alert("Nilai I dan Nilai II harus diisi!");
+      resultDiv.textContent = "";
+      return;
+    }
+
+    let hasil;
+
+    switch (op) {
+      case "+":
+        hasil = n1 + n2;
+        break;
+      case "-":
+        hasil = n1 - n2;
+        break;
+      case "*":
+        hasil = n1 * n2;
+        break;
+      case "/":
+        if (n2 === 0) {
+          alert("Tidak bisa dibagi 0!");
+          resultDiv.textContent = "";
+          return;
+        }
+        hasil = n1 / n2;
+        break;
+      case "^": // operasi pangkat
+        hasil = Math.pow(n1, n2);
+        break;
+      default:
+        hasil = "Operator tidak dikenal";
+    }
+
+    resultDiv.textContent = "Hasil: " + hasil;
+  });
+});
+
+    </script>
   </body>
 </html>
