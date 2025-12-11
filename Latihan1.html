@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KALKULATOR | by Ricky</title>
+
+    <!-- CSS eksternal -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="window">
+      <div class="title-bar">KALKULATOR SEDERHANA</div>
+      <div class="content">
+        <h1>Operasi Aritmatika</h1>
+
+        <div class="labels">
+          <span>Nilai I</span>
+          <span>Nilai II</span>
+        </div>
+
+        <div class="row-input">
+          <input type="number" id="nilai1" placeholder="Masukkan nilai pertama" />
+          <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+          </select>
+          <input type="number" id="nilai2" placeholder="Masukkan nilai kedua" />
+          <button id="btnHitung">submit</button>
+        </div>
+
+        <!-- HASIL MUNCUL DI SINI -->
+        <div id="result"></div>
+
+        <!-- TULISAN DI BAWAH HASIL -->
+        <p class="credit">Created by Ricky Allende Rabbani, allenderabbani@gmail.com</p>
+        <!-- ganti nama & email sesuai keinginan -->
+      </div>
+    </div>
+
+    <!-- JS eksternal -->
+    <script src="script.js"></script>
+  </body>
+</html>
