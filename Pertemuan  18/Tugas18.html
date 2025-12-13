@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas Bagian 2 (No 5-8)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #e0f7fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .task-box { border: 1px solid #0097a7; padding: 15px; margin-bottom: 20px; border-radius: 5px; background-color: #fff; }
+        h2 { border-bottom: 2px solid #006064; padding-bottom: 10px; color: #006064; }
+        h3 { color: #00838f; margin-top: 0; }
+        .result { background-color: #f0f0f0; padding: 10px; margin-top: 10px; font-family: monospace; border-left: 4px solid #00838f; }
+        button { padding: 8px 15px; cursor: pointer; background-color: #0097a7; color: white; border: none; border-radius: 4px; }
+        button:hover { background-color: #006064; }
+    </style>
+</head>
+<body onLoad="window.defaultStatus='Selamat belajar JavaScript'">
+
+<div class="container">
+    <h2>Tugas Bagian 2</h2>
+
+    <div class="task-box">
+        <h3>5. Penggunaan Array (Latihan 18-5)</h3>
+        <p>Menampilkan isi array olahraga.</p>
+        <button onclick="runTugas5()">Tampilkan Array</button>
+        <div id="out5" class="result">...</div>
+    </div>
+
+    <div class="task-box">
+        <h3>6. Loop & Konversi Suhu (Latihan 18-6)</h3>
+        <p>Konversi Fahrenheit ke Celsius dengan Loop Mundur.</p>
+        <button onclick="runTugas6()">Konversi</button>
+        <div id="out6" class="result">...</div>
+    </div>
+
+    <div class="task-box">
+        <h3>7. Concat 2 Array (Latihan 18-7)</h3>
+        <p>Menggabungkan Parents + Children.</p>
+        <button onclick="runTugas7()">Gabungkan</button>
+        <div id="out7" class="result">...</div>
+    </div>
+
+    <div class="task-box">
+        <h3>8. Concat 3 Array (Latihan 18-8)</h3>
+        <p>Menggabungkan Parents + Brothers + Children.</p>
+        <button onclick="runTugas8()">Gabungkan Semua</button>
+        <div id="out8" class="result">...</div>
+    </div>
+</div>
+
+<script>
+    /* --- LOGIKA NO 5 --- */
+    function runTugas5() {
+        var myArray = new Array();
+        myArray[0] = "Football";
+        myArray[1] = "Baseball";
+        myArray[2] = "Cricket";
+        
+        document.getElementById("out5").innerHTML = myArray[0] + " " + myArray[1] + " " + myArray[2];
+    }
+
+    /* --- LOGIKA NO 6 --- */
+    function konversi(F) {
+        var C;
+        C = (5 / 9) * (F - 32);
+        return C;
+    }
+
+    function runTugas6() {
+        var F = new Array(212, 32, -459.15);
+        var C = new Array();
+        var Counter;
+        var text = "";
+
+        // Hitung dulu
+        for (Counter = 0; Counter <= 2; Counter++) {
+            C[Counter] = konversi(F[Counter]);
+        }
+
+        // Tampilkan mundur (sesuai soal asli)
+        for (Counter = 2; Counter >= 0; Counter--) {
+            text += "Value " + Counter + " was " + F[Counter] + " derajat Fahrenheit.<br>";
+            text += "which is " + C[Counter] + " derajat Celsius.<br><br>";
+        }
+        document.getElementById("out6").innerHTML = text;
+    }
+
+    /* --- LOGIKA NO 7 --- */
+    function runTugas7() {
+        var parents = ["Jani", "Tove"];
+        var children = ["Cecilie", "Lone"];
+        var family = parents.concat(children);
+
+        document.getElementById("out7").innerHTML = family.join(", ");
+    }
+
+    /* --- LOGIKA NO 8 --- */
+    function runTugas8() {
+        var parents = ["Jani", "Tove"];
+        var brothers = ["Stale", "Kai Jim", "Borge"];
+        var children = ["Cecilie", "Lone"];
+
+        var family = parents.concat(brothers, children);
+        document.getElementById("out8").innerHTML = family.join(", ");
+    }
+</script>
+
+</body>
+</html>

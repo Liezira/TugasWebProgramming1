@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Bagian 1 (No 1-4)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .exercise-box { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        h2 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+        h3 { color: #0056b3; margin-top: 0; }
+        .result { background-color: #e9ecef; padding: 10px; margin-top: 10px; font-family: monospace; border-left: 4px solid #0056b3; }
+        button { padding: 8px 15px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Latihan Bagian 1</h2>
+
+    <div class="exercise-box">
+        <h3>1. Scope Variable (Latihan 18-1)</h3>
+        <p>Klik tombol untuk melihat hasil perhitungan scope variabel.</p>
+        <button onclick="runLatihan1()">Jalankan Kode</button>
+        <div id="output1" class="result">Hasil akan muncul di sini...</div>
+    </div>
+
+    <div class="exercise-box">
+        <h3>2. Fungsi Perkalian (Latihan 18-2)</h3>
+        <p>Menghitung hasil product(4, 3).</p>
+        <button onclick="runLatihan2()">Hitung</button>
+        <div id="output2" class="result">Hasil akan muncul di sini...</div>
+    </div>
+
+    <div class="exercise-box">
+        <h3>3. Radio Object (Latihan 18-3)</h3>
+        <form>
+            <p>
+                <input type="radio" name="wanita" value="wanita" /> Wanita<br />
+                <input type="radio" name="pria" value="pria" /> Pria
+            </p>
+            <p>
+                <input type="button" value="CONFIRM" onclick="radio_box(this.form)" />
+                <input type="reset" value="RESET" />
+            </p>
+        </form>
+    </div>
+
+    <div class="exercise-box">
+        <h3>4. Sum of Arguments (Latihan 18-4)</h3>
+        <p>Menjumlahkan angka: 10, 127, 400, 125, 34, 78</p>
+        <button onclick="runLatihan4()">Hitung Total</button>
+        <div id="output4" class="result">Hasil akan muncul di sini...</div>
+    </div>
+</div>
+
+<script>
+    /* --- LOGIKA NO 1 --- */
+    function runLatihan1() {
+        var a = 12; // Global context dalam fungsi ini
+        var b = 4;
+
+        function PerkalianDengan2(b) {
+            var a = b * 2; // Local context
+            return a;
+        }
+
+        var text = "Dua kali dari " + b + " adalah " + PerkalianDengan2(b) + "<br>";
+        text += "Nilai dari a adalah " + a;
+        document.getElementById("output1").innerHTML = text;
+    }
+
+    /* --- LOGIKA NO 2 --- */
+    function product(a, b) {
+        return a * b;
+    }
+    function runLatihan2() {
+        document.getElementById("output2").innerHTML = "Hasil: " + product(4, 3);
+    }
+
+    /* --- LOGIKA NO 3 --- */
+    function radio_box(form) {
+        var ket = "";
+        if (form.wanita.checked === true) {
+            ket = "Wanita";
+        } else if (form.pria.checked === true) {
+            ket = "Pria";
+        } else {
+            ket = "Gak Jelas";
+        }
+        alert("Anda adalah seorang " + ket);
+    }
+
+    /* --- LOGIKA NO 4 --- */
+    function sumAll() {
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+    }
+    function runLatihan4() {
+        var hasil = sumAll(10, 127, 400, 125, 34, 78);
+        document.getElementById("output4").innerHTML = "Total Sum: " + hasil;
+    }
+</script>
+
+</body>
+</html>
