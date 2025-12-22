@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1: Pengenalan CSS</title>
+    
+    <style>
+        /* JAWABAN NO 3: Setting Tampilan Website dengan CSS */
+        
+        /* Mengatur background halaman dan jenis font utama */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e3f2fd; /* Warna biru muda lembut */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Mengatur layout kontainer agar berada di tengah (centering) */
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Posisi tengah otomatis */
+            background-color: #ffffff; /* Latar putih untuk konten */
+            padding: 40px;
+            border-radius: 12px; /* Sudut membulat */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Efek bayangan */
+            border-top: 5px solid #1976d2; /* Garis aksen biru di atas */
+        }
+
+        /* Styling untuk Judul Utama */
+        h1 {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Styling untuk Sub-judul (Soal) */
+        h2 {
+            font-size: 1.2rem;
+            color: #0d47a1;
+            margin-top: 30px;
+            border-bottom: 2px solid #bbdefb;
+            padding-bottom: 5px;
+        }
+
+        /* Styling untuk kotak jawaban agar lebih menonjol */
+        .jawaban-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2196f3;
+            padding: 15px 20px;
+            margin-top: 10px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Highlight untuk istilah coding */
+        code {
+            background-color: #eceff1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tugas Latihan CSS</h1>
+
+        <section>
+            <h2>1. Apa gunanya CSS?</h2>
+            <div class="jawaban-box">
+                <p><strong>CSS (Cascading Style Sheets)</strong> berguna untuk mengatur tampilan dan presentasi sebuah halaman web. Jika HTML berperan sebagai kerangka struktur (tulang), maka CSS berperan sebagai kulit dan baju yang mempercantik.</p>
+                <p>Kegunaan utamanya meliputi:</p>
+                <ul>
+                    <li>Mengatur warna, jenis font, ukuran teks, dan latar belakang.</li>
+                    <li>Mengatur tata letak (layout), jarak antar elemen (margin/padding), dan posisi elemen.</li>
+                    <li>Membuat website menjadi <strong>responsif</strong> (menyesuaikan tampilan di HP, Tablet, dan Desktop).</li>
+                    <li>Memisahkan konten (HTML) dari desain visual, sehingga kode lebih rapi dan mudah dikelola.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Implementasi CSS Embed</h2>
+            <div class="jawaban-box">
+                <p>Pada file ini, saya telah membuat CSS menggunakan metode <strong>Embed (Internal CSS)</strong>. Hal ini bisa dilihat pada bagian <code>&lt;head&gt;</code> di atas, di mana kode CSS ditulis di dalam tag <code>&lt;style&gt; ... &lt;/style&gt;</code>, bukan di file terpisah maupun di dalam baris elemen (inline).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Setting Tampilan Website</h2>
+            <div class="jawaban-box">
+                <p>Tampilan website ini telah di-setting sedemikian rupa menggunakan properti CSS:</p>
+                <ul>
+                    <li><strong>Background:</strong> Menggunakan warna biru muda (<code>#e3f2fd</code>) agar nyaman di mata.</li>
+                    <li><strong>Container:</strong> Menggunakan margin <code>auto</code> agar konten berada di tengah layar dan diberi efek bayangan (<code>box-shadow</code>).</li>
+                    <li><strong>Typography:</strong> Menggunakan font <em>Segoe UI</em> agar terlihat modern dan bersih.</li>
+                    <li><strong>Styling Box:</strong> Jawaban ini dibungkus dalam kotak abu-abu dengan garis tepi biru (<code>border-left</code>) untuk memberikan penekanan visual.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer">
+            <p>Tugas 1 - Pemrograman Web</p>
+        </div>
+    </div>
+
+</body>
+</html>
