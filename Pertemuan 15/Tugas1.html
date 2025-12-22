@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas 1: Integrasi JS</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #e0f7fa; padding: 30px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        h1 { color: #006064; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], select { width: 100%; padding: 8px; box-sizing: border-box; }
+        input[type="button"] { background-color: #00838f; color: white; border: none; padding: 10px 20px; cursor: pointer; width: 100%; font-size: 16px; margin-top: 10px; }
+        input[type="button"]:hover { background-color: #006064; }
+        #greeting { text-align: center; color: #00838f; margin-bottom: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body onload="sapaUser()"> 
+    <div class="container">
+        <h1>Form Pendaftaran Kursus</h1>
+        <div id="greeting"></div>
+        
+        <form name="formDaftar">
+            <div class="form-group">
+                <label>Nama Lengkap:</label>
+                <input type="text" name="inputNama" id="boxNama" placeholder="Nama otomatis muncul dari prompt">
+            </div>
+
+            <div class="form-group">
+                <label>Pilihan Materi:</label>
+                <select name="inputMateri">
+                    <option value="HTML Dasar">HTML Dasar</option>
+                    <option value="CSS Layouting">CSS Layouting</option>
+                    <option value="JavaScript DOM">JavaScript DOM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Hari Kursus:</label>
+                <br>
+                <input type="radio" name="hari" value="Sabtu" checked> Sabtu
+                <input type="radio" name="hari" value="Minggu"> Minggu
+            </div>
+
+            <input type="button" value="Daftar Sekarang" onclick="prosesDaftar()">
+        </form>
+    </div>
+
+    <script>
+        // 1. ALERT & 2. PROMPT (Dijalankan otomatis via body onload)
+        function sapaUser() {
+            // Fasilitas Alert
+            alert("Selamat Datang di Website Pendaftaran Kursus!");
+
+            // Fasilitas Prompt
+            let namaUser = prompt("Silakan masukkan nama panggilan Anda:", "Tamu");
+            
+            // Validasi sederhana jika user klik cancel
+            if (namaUser != null && namaUser != "") {
+                document.getElementById("greeting").innerHTML = "Halo, <b>" + namaUser + "</b>! Silakan lengkapi form di bawah.";
+                document.formDaftar.inputNama.value = namaUser; // Otomatis mengisi form
+            } else {
+                document.getElementById("greeting").innerHTML = "Halo! Silakan lengkapi form di bawah.";
+            }
+        }
+
+        // Fungsi Tombol (Menggabungkan FORM dan CONFIRM)
+        function prosesDaftar() {
+            // Mengambil data dari Form
+            let nama = document.formDaftar.inputNama.value;
+            let materi = document.formDaftar.inputMateri.value;
+            let hari = document.querySelector('input[name="hari"]:checked').value;
+
+            if (nama === "") {
+                alert("Nama tidak boleh kosong!");
+                return;
+            }
+
+            // 3. Fasilitas CONFIRM
+            let statusConfirm = confirm("Cek Data:\nNama: " + nama + "\nMateri: " + materi + "\nHari: " + hari + "\n\nApakah data sudah benar?");
+
+            if (statusConfirm == true) {
+                // Jika OK, Tampilkan Alert Sukses
+                alert("Terima kasih " + nama + "! Pendaftaran Anda berhasil disimpan.");
+            } else {
+                // Jika Cancel
+                alert("Pendaftaran dibatalkan. Silakan perbaiki data.");
+            }
+        }
+    </script>
+</body>
+</html>
