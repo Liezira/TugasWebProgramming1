@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 5 - Switch Case String</title>
+</head>
+<body style="padding: 20px; font-family: sans-serif;">
+    <h2>Latihan 5: Switch Case (Topik Belajar)</h2>
+    <p>Klik tombol untuk melihat pesan berdasarkan subjek.</p>
+
+    <button onclick="cekSubject()">Cek Subject</button>
+
+    <script>
+        function cekSubject() {
+            // Sesuai modul, variabel diset "Humility", tapi saya buat prompt agar interaktif
+            var subject = prompt("Pilih Subject: Humility, Literature, atau Economics", "Humility");
+            
+            switch (subject) {
+                case "Deep Thoughts":
+                    alert("On Deep thoughts: A day without sunshine is like night.");
+                    break;
+                case "Problem Solving":
+                    alert("On Problem Solving: Every problem begins to resemble a nail.");
+                    break;
+                case "Materialism":
+                    alert("He who dies with the most toys, is nonetheless, still dead.");
+                    break;
+                case "Economics":
+                    alert("The cost of living hasn't affected its popularity.");
+                    break;
+                case "Literature":
+                    alert("This is not a novel to be tossed aside lightly.");
+                    break;
+                case "Humility":
+                    alert("To err is human, to moo bovine.");
+                    break;
+                default:
+                    alert("I learnt nothing in college");
+            }
+        }
+    </script>
+
+   
+</body>
+</html>

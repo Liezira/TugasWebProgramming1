@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 4 - Input Nama</title>
+</head>
+<body style="padding: 20px; font-family: sans-serif;">
+    <h2>Latihan 4: Input Nama User</h2>
+    
+    <script>
+        function sapaUser() {
+            // Logika prompt dan concat string [cite: 649-653]
+            var greetingString = "Hello ";
+            var myName = prompt("Please enter your name", "");
+            
+            if (myName != null) {
+                var concatString = greetingString + myName;
+                document.getElementById("hasil").innerHTML = "<b>" + concatString + "</b>";
+            }
+        }
+    </script>
+
+    <button onclick="sapaUser()">Masukkan Nama</button>
+    <p id="hasil">Hasil akan muncul di sini...</p>
+    <br>
+
+ 
+</body>
+</html>

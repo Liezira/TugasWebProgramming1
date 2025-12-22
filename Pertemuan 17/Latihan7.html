@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 7 - Tebak Angka</title>
+</head>
+<body style="padding: 20px; font-family: sans-serif;">
+    <h2>Latihan 7: Game Tebak Angka (1-5)</h2>
+    <button onclick="mainGame()">Mulai Tebak</button>
+    <p id="pesan"></p>
+
+    <script>
+        function mainGame() {
+            var secretNumber = prompt("Pick a number between 1 and 5:", "");
+            secretNumber = parseInt(secretNumber);
+            var msg = "";
+
+            switch (secretNumber) {
+                case 1: msg = "Too low! 1"; break;
+                case 2: msg = "Too low! 2"; break;
+                case 3: msg = "<b>You guessed the secret number! (3)</b>"; break;
+                case 4: msg = "Too high 4!"; break;
+                case 5: msg = "Too high! 5"; break;
+                default: msg = "You did not enter a number between 1 and 5."; break;
+            }
+            
+            document.getElementById("pesan").innerHTML = msg + "<br>Execution continues here";
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Akhir - Deret Bilangan</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .hasil-box { 
+            border: 1px solid #333; 
+            padding: 20px; 
+            margin-top: 20px; 
+            background-color: #f9f9f9; 
+            display: none; /* Sembunyikan dulu */
+        }
+        button { padding: 10px 15px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+        button.back { background-color: #dc3545; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Tugas: Deret Bilangan Genap Habis Dibagi 3</h2>
+    <p>Program ini akan mencari bilangan yang <b>Genap</b> DAN <b>Habis dibagi 3</b> (Kelipatan 6).</p>
+    
+    <button onclick="prosesDeret()">Mulai Program</button>
+
+    <div id="output" class="hasil-box">
+        </div>
+
+    <br>
+    <button class="back" onclick="window.location.href='latihan1.html'">
+        << Kembali ke Latihan 1
+    </button>
+
+    <script>
+        function prosesDeret() {
+            // 1. Input Nilai Awal dan Akhir [cite: 1296]
+            var awal = prompt("Masukkan Nilai Awal:", 1);
+            var akhir = prompt("Masukkan Nilai Akhir:", 50);
+
+            // Konversi ke integer
+            awal = parseInt(awal);
+            akhir = parseInt(akhir);
+
+            // Validasi input
+            if (isNaN(awal) || isNaN(akhir)) {
+                alert("Harap masukkan angka yang valid!");
+                return;
+            }
+
+            var deret = "";
+            var jumlahBilangan = 0; // Menghitung 'banyaknya' bilangan
+            var totalNilai = 0;     // Menghitung 'penjumlahan' nilai bilangan
+
+            // 2. Looping dan Logika [cite: 1295]
+            for (var i = awal; i <= akhir; i++) {
+                // Cek Genap (i % 2 == 0) DAN Habis dibagi 3 (i % 3 == 0)
+                if (i % 2 == 0 && i % 3 == 0) {
+                    deret += i + "  ";  // Simpan ke string deret
+                    jumlahBilangan++;       // Tambah counter
+                    totalNilai += i;        // Tambahkan ke total
+                }
+            }
+
+            // Jika tidak ada bilangan yang memenuhi
+            if (jumlahBilangan == 0) {
+                deret = "- (Tidak ada bilangan yang memenuhi)";
+            }
+
+            // 3. Menampilkan Output sesuai format soal [cite: 1297-1302]
+            var tampilan = "<b>Nilai Awal :</b> " + awal + "<br>";
+            tampilan += "<b>Nilai Akhir :</b> " + akhir + "<br>";
+            tampilan += "<b>Deret yang tampil :</b> " + deret + "<br>";
+            tampilan += "<b>Jumlah deret bilangan :</b> " + jumlahBilangan + " bilangan<br>";
+            tampilan += "<b>Jumlah nilai bilangan tersebut :</b> " + totalNilai;
+
+            var box = document.getElementById("output");
+            box.style.display = "block";
+            box.innerHTML = tampilan;
+        }
+    </script>
+</body>
+</html>

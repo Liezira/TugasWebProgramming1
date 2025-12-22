@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 2 - Konversi Suhu</title>
+</head>
+<body style="padding: 20px; font-family: sans-serif;">
+    <h2>Latihan 2: Konversi Fahrenheit ke Celcius</h2>
+    <p>Klik tombol di bawah untuk memasukkan suhu.</p>
+
+    <script>
+        function hitungSuhu() {
+            // Logika konversi suhu [cite: 609-611]
+            var degFahren = prompt("Masukkan derajat Fahrenheit", 50);
+            if(degFahren != null){
+                var degCent = 5/9 * (degFahren - 32);
+                alert(degFahren + " Fahrenheit = " + degCent.toFixed(2) + " Celcius");
+            }
+        }
+    </script>
+
+    <button onclick="hitungSuhu()">Mulai Hitung</button>
+    <br><br>
+
+    
+</body>
+</html>
