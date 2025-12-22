@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas Trapesium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 500px;
+        }
+        h3 {
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        .label {
+            display: inline-block;
+            width: 100px; /* Supaya titik dua sejajar */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="hasilOutput">
+        </div>
+
+    <script>
+        // 1. Meminta input dari user menggunakan Prompt
+        // Penting: Input dari prompt masih berbentuk "String" (teks)
+        let inputAtas = prompt("Masukkan nilai Garis Atas (cm):");
+        let inputBawah = prompt("Masukkan nilai Garis Bawah (cm):");
+        let inputTinggi = prompt("Masukkan nilai Tinggi (cm):");
+
+        // 2. Mengubah teks menjadi Angka (Number/Float) agar bisa dihitung
+        // Jika tidak diubah, nanti "10" + "20" hasilnya jadi "1020", bukan 30.
+        let garisAtas = parseFloat(inputAtas);
+        let garisBawah = parseFloat(inputBawah);
+        let tinggi = parseFloat(inputTinggi);
+
+        // 3. Rumus Luas Trapesium: 1/2 * (atas + bawah) * tinggi
+        let luas = 0.5 * (garisAtas + garisBawah) * tinggi;
+
+        // 4. Menampilkan Output ke layar sesuai format gambar
+        let tampilan = `
+            <h3>Menghitung Luas Trapesium</h3>
+            
+            <b>Diketahui :</b><br>
+            <span class="label">Garis Atas</span> : ${garisAtas} Cm<br>
+            <span class="label">Garis Bawah</span> : ${garisBawah} Cm<br>
+            <span class="label">Tinggi</span> : ${tinggi} Cm<br>
+            <br>
+            <b>Maka :</b><br>
+            <span class="label">Luas</span> : ½ x (${garisAtas} + ${garisBawah}) x ${tinggi} = <b>${luas} Cm²</b>
+        `;
+
+        // Masukkan hasil ke dalam div HTML
+        document.getElementById("hasilOutput").innerHTML = tampilan;
+    </script>
+
+</body>
+</html>
